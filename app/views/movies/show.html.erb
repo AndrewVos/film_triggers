@@ -1,62 +1,66 @@
-<ul class="media-list">
-  <li class="media">
-    <div class="media-left">
-      <%= image_tag large_poster_url_for(@movie[:poster_path]), width: '300', height: '450', class: 'media-object' %>
-    </div>
-    <div class="media-body">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <h1 class="media-heading movie-title">
-            <%= @movie[:title] %>
-          </h1>
-          <h2 class="movie-tagline">
-            <%= @movie[:tagline] %>
-          </h2>
-          <h3 class="movie-overview">
-            <%= @movie[:overview] %>
-          </h3>
-          <% if @movie[:imdb_id].present? %>
-            <%= link_to @imdb_url, @imdb_url %>
-          <% end %>
-        </div>
+<div class="row">
+  <div class="col-xs-12">
+    <h1 class="media-heading movie-title">
+      <%= @movie[:title] %>
+    </h1>
+  </div>
+  <div class="col-xs-12 col-sm-4 col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-body text-center">
+        <%= image_tag large_poster_url_for(@movie[:poster_path]), width: '300', height: '450', class: 'img-responsive movie-image' %>
       </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-8 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h2 class="movie-tagline">
+          <%= @movie[:tagline] %>
+        </h2>
+        <p class="movie-overview">
+          <%= @movie[:overview] %>
+        </p>
+        <% if @movie[:imdb_id].present? %>
+          <%= link_to @imdb_url, @imdb_url %>
+        <% end %>
+      </div>
+    </div>
 
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <h4>Triggers</h4>
-          <% if @triggers.any? %>
-            <ul class="list-group">
-              <% @triggers.each do |trigger| %>
-                <li class="list-group-item movie-trigger">
-                  <%= trigger.label %> x <%= trigger['count'] %>
-                </li>
-              <% end %>
-            </ul>
-          <% else %>
-            <p>
-              There are no triggers listed here yet. If you notice any triggers in this film please add them!
-            </p>
-          <% end %>
-
-          <h4>Add a trigger</h4>
-          <% if user_signed_in? %>
-            <%= form_with url: triggers_path, local: true do |f| %>
-              <%= f.hidden_field :movie_id, value: @movie[:id] %>
-              <div class="form-group">
-                <%= f.label :label, 'Trigger', class: 'sr-only' %>
-                <%= f.select :label, Trigger::TRIGGERS, {selected: 'violence'}, id: :label, class: 'form-control t-trigger-select' %>
-              </div>
-
-              <%= f.submit 'Add trigger', class: 'btn btn-primary' %>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h4>Triggers</h4>
+        <% if @triggers.any? %>
+          <ul class="list-group">
+            <% @triggers.each do |trigger| %>
+              <li class="list-group-item movie-trigger">
+                <%= trigger.label %> x <%= trigger['count'] %>
+              </li>
             <% end %>
-          <% else %>
-            <p>
-              <%= link_to 'Sign in', new_user_session_path %>
-              to add a trigger.
-            </p>
+          </ul>
+        <% else %>
+          <p>
+            There are no triggers listed here yet. If you notice any triggers in this film please add them!
+          </p>
+        <% end %>
+
+        <h4>Add a trigger</h4>
+        <% if user_signed_in? %>
+          <%= form_with url: triggers_path, local: true do |f| %>
+            <%= f.hidden_field :movie_id, value: @movie[:id] %>
+            <div class="form-group">
+              <%= f.label :label, 'Trigger', class: 'sr-only' %>
+              <%= f.select :label, Trigger::TRIGGERS, {selected: 'violence'}, id: :label, class: 'form-control t-trigger-select' %>
+            </div>
+
+            <%= f.submit 'Add trigger', class: 'btn btn-primary' %>
           <% end %>
-        </div>
+        <% else %>
+          <p>
+            <%= link_to 'Sign in', new_user_session_path %>
+            to add a trigger.
+          </p>
+        <% end %>
       </div>
     </div>
-  </li>
-</ul>
+  </div>
+</div>
