@@ -12,6 +12,12 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
+    <%= form_with url: movies_path, method: 'GET', local: true do |f| %>
+      <%= f.label :q, 'Search' %>
+      <%= f.text_field :q, id: :q %>
+      <%= f.submit 'Search' %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

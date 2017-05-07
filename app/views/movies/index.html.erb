@@ -1,0 +1,8 @@
+<% @results.each do |result| %>
+  <div class="movie">
+    <%= link_to movie_path(result['id']) do %>
+      <%= result['original_title'] %>
+    <% end %>
+    <%= image_tag "https://image.tmdb.org/t/p/w92#{result['poster_path']}" %>
+  </div>
+<% end %>

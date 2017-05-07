@@ -1,0 +1,201 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=<API_KEY>&query=rogue%20one
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After
+      Cache-Control:
+      - public, max-age=21600
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sun, 07 May 2017 14:05:10 GMT
+      Server:
+      - openresty
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '39'
+      X-Ratelimit-Reset:
+      - '1494165920'
+      Content-Length:
+      - '1093'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":1,"results":[{"poster_path":"\/qjiskwlV1qQzRCjpV0cL9pEMF9a.jpg","adult":false,"overview":"A
+        rogue band of resistance fighters unite for a mission to steal the Death Star
+        plans and bring a new hope to the galaxy.","release_date":"2016-12-14","genre_ids":[28,878],"id":330459,"original_title":"Rogue
+        One: A Star Wars Story","original_language":"en","title":"Rogue One: A Star
+        Wars Story","backdrop_path":"\/tZjVVIYXACV4IIIhXeIM59ytqwS.jpg","popularity":27.673177,"vote_count":3527,"video":false,"vote_average":7.3},{"poster_path":"\/h72WA6zvYgselKzddUQFIFqRmEK.jpg","adult":false,"overview":"A
+        fan edit by Dustin Lee of Rogue One: A Star Wars Story- a 50-minute long edit
+        of the film that focuses solely on the final battle on the planet Scarif.
+        Enhancements include cutting and trimming dialogue and scenes, adding original
+        Star Wars sound effects, and replacing the score with the original Star Wars
+        score by John Williams.","release_date":"2017-05-04","genre_ids":[],"id":456223,"original_title":"Rogue
+        One: The Battle of Scarif","original_language":"en","title":"Rogue One: The
+        Battle of Scarif","backdrop_path":null,"popularity":2.1385,"vote_count":0,"video":false,"vote_average":0},{"poster_path":"\/3ZNYEYA9SYFT2zbRQ5c8VyUnQSc.jpg","adult":false,"overview":"Rich
+        Peppiatt delivers a satirical dissection of the newspaper trade by turning
+        the tables on unscrupulous editors. Through a series of mischievous stunts
+        and interviews with heavyweights of journalism, comedy &amp; politics, Peppiatt
+        hilariously exposes the hypocrisy at the heart of modern journalism.","release_date":"2014-06-08","genre_ids":[35,99],"id":276562,"original_title":"One
+        Rogue Reporter","original_language":"en","title":"One Rogue Reporter","backdrop_path":null,"popularity":1.046542,"vote_count":1,"video":false,"vote_average":5},{"poster_path":"\/qGT8XBRhJCgTLvUmAcw0puG5yAp.jpg","adult":false,"overview":"Craving
+        the attention of her busy father, a 7-year-old Star Wars fan disobeys him
+        and starts a rebellion with his Star Wars toy collection that would have surprising
+        consequences.","release_date":"2016-12-15","genre_ids":[],"id":431575,"original_title":"The
+        Rogue One: A Star Wars Toy Story","original_language":"en","title":"The Rogue
+        One: A Star Wars Toy Story","backdrop_path":"\/bYWxAEsDeTDVA52q0Y68HSQ62bl.jpg","popularity":1.438037,"vote_count":1,"video":false,"vote_average":10}],"total_results":4,"total_pages":1}'
+    http_version: 
+  recorded_at: Sun, 07 May 2017 14:05:10 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/330459?api_key=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After
+      Cache-Control:
+      - public, max-age=28800
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sun, 07 May 2017 14:05:11 GMT
+      Etag:
+      - W/"fdfa24945721d03c60ff81f3447596d5"
+      Server:
+      - openresty
+      Vary:
+      - Accept-Encoding
+      X-Memc:
+      - HIT
+      X-Memc-Age:
+      - '16281'
+      X-Memc-Expires:
+      - '12519'
+      X-Memc-Key:
+      - f84e0360330f8db39cf4534328a98eb3
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '38'
+      X-Ratelimit-Reset:
+      - '1494165920'
+      Content-Length:
+      - '736'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tZjVVIYXACV4IIIhXeIM59ytqwS.jpg","belongs_to_collection":{"id":10,"name":"Star
+        Wars Collection","poster_path":"/ghd5zOQnDaDW1mxO7R5fXXpZMu.jpg","backdrop_path":"/d8duYyyC9J5T825Hg7grmaabfxQ.jpg"},"budget":200000000,"genres":[{"id":28,"name":"Action"},{"id":878,"name":"Science
+        Fiction"}],"homepage":"http://www.starwars.com/films/rogue-one","id":330459,"imdb_id":"tt3748528","original_language":"en","original_title":"Rogue
+        One: A Star Wars Story","overview":"A rogue band of resistance fighters unite
+        for a mission to steal the Death Star plans and bring a new hope to the galaxy.","popularity":26.673177,"poster_path":"/qjiskwlV1qQzRCjpV0cL9pEMF9a.jpg","production_companies":[{"name":"Lucasfilm","id":1},{"name":"Walt
+        Disney Studios Motion Pictures","id":3036},{"name":"Allison Shearmur Productions","id":47706},{"name":"Black
+        Hangar Studios","id":68738}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2016-12-14","revenue":1053929274,"runtime":133,"spoken_languages":[{"iso_639_1":"en","name":"English"}],"status":"Released","tagline":"A
+        Rebellion Built on Hope","title":"Rogue One: A Star Wars Story","video":false,"vote_average":7.3,"vote_count":3540}'
+    http_version: 
+  recorded_at: Sun, 07 May 2017 14:05:11 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/330459?api_key=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After
+      Cache-Control:
+      - public, max-age=28800
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sun, 07 May 2017 14:05:12 GMT
+      Etag:
+      - W/"fdfa24945721d03c60ff81f3447596d5"
+      Server:
+      - openresty
+      Vary:
+      - Accept-Encoding
+      X-Memc:
+      - HIT
+      X-Memc-Age:
+      - '16282'
+      X-Memc-Expires:
+      - '12518'
+      X-Memc-Key:
+      - f84e0360330f8db39cf4534328a98eb3
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '37'
+      X-Ratelimit-Reset:
+      - '1494165920'
+      Content-Length:
+      - '736'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tZjVVIYXACV4IIIhXeIM59ytqwS.jpg","belongs_to_collection":{"id":10,"name":"Star
+        Wars Collection","poster_path":"/ghd5zOQnDaDW1mxO7R5fXXpZMu.jpg","backdrop_path":"/d8duYyyC9J5T825Hg7grmaabfxQ.jpg"},"budget":200000000,"genres":[{"id":28,"name":"Action"},{"id":878,"name":"Science
+        Fiction"}],"homepage":"http://www.starwars.com/films/rogue-one","id":330459,"imdb_id":"tt3748528","original_language":"en","original_title":"Rogue
+        One: A Star Wars Story","overview":"A rogue band of resistance fighters unite
+        for a mission to steal the Death Star plans and bring a new hope to the galaxy.","popularity":26.673177,"poster_path":"/qjiskwlV1qQzRCjpV0cL9pEMF9a.jpg","production_companies":[{"name":"Lucasfilm","id":1},{"name":"Walt
+        Disney Studios Motion Pictures","id":3036},{"name":"Allison Shearmur Productions","id":47706},{"name":"Black
+        Hangar Studios","id":68738}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2016-12-14","revenue":1053929274,"runtime":133,"spoken_languages":[{"iso_639_1":"en","name":"English"}],"status":"Released","tagline":"A
+        Rebellion Built on Hope","title":"Rogue One: A Star Wars Story","video":false,"vote_average":7.3,"vote_count":3540}'
+    http_version: 
+  recorded_at: Sun, 07 May 2017 14:05:12 GMT
+recorded_with: VCR 3.0.3
