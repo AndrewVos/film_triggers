@@ -84,6 +84,7 @@ GEM
     concurrent-ruby (1.0.5)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
+    devise-bootstrap-views (0.0.11)
     dotenv (2.2.1)
     dotenv-rails (2.2.1)
       dotenv (= 2.2.1)
@@ -226,6 +227,7 @@ DEPENDENCIES
   capybara (~> 2.13.0)
   coffee-rails (~> 4.2)
   devise!
+  devise-bootstrap-views
   dotenv-rails
   httparty
   jbuilder (~> 2.5)

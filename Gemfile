@@ -25,6 +25,8 @@ gem 'active_link_to'
 
 gem 'devise', github: 'plataformatec/devise'
 
+gem 'devise-bootstrap-views'
+
 gem 'httparty'
 
 # Use CoffeeScript for .coffee assets and views
