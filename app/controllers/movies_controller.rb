@@ -5,6 +5,7 @@ class MoviesController < ApplicationController
 
   def show
     @movie = movie(params[:id])
+    @imdb_url = "http://www.imdb.com/title/#{@movie[:imdb_id]}/"
     @triggers = Trigger
       .select('label, COUNT(label) AS count')
       .group(:label)

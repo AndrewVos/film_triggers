@@ -15,6 +15,9 @@
           <h3 class="movie-overview">
             <%= @movie[:overview] %>
           </h3>
+          <% if @movie[:imdb_id].present? %>
+            <%= link_to @imdb_url, @imdb_url %>
+          <% end %>
         </div>
       </div>
 
