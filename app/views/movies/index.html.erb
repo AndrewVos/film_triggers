@@ -14,11 +14,21 @@
   <% end %>
 </div>
 
-<div class="list-group">
-  <% @results.each do |result| %>
-    <%= link_to movie_path(result['id']), class: 'list-group-item movie' do %>
-      <%= image_tag poster_url_for(result[:poster_path]), width: '92', height: '138' %>
-      <%= result['original_title'] %>
+<% if params[:q].present? %>
+  <div class="list-group">
+    <% @results.each do |result| %>
+      <%= link_to movie_path(result['id']), class: 'list-group-item movie' do %>
+        <%= image_tag poster_url_for(result[:poster_path]), width: '92', height: '138' %>
+        <%= result['original_title'] %>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
+<% else %>
+  <h1>
+    Welcome to TriggerDatabase
+  </h1>
+
+  <p>
+    Search for a movie above to see the list of triggers that our community has added to it!
+  </p>
+<% end %>
