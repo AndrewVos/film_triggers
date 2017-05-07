@@ -1,8 +1,34 @@
-<% @results.each do |result| %>
-  <div class="movie">
-    <%= link_to movie_path(result['id']) do %>
-      <%= result['original_title'] %>
-    <% end %>
-    <%= image_tag "https://image.tmdb.org/t/p/w92#{result['poster_path']}" %>
+<div class="container-fluid search">
+  <div class="row">
+    <div class="col-xs-12">
+      <%= form_with url: movies_path, method: 'GET', local: true, role: 'form' do |f| %>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="input-group input-group-lg">
+              <%= f.label :q, 'Search', class: 'sr-only' %>
+              <%= f.text_field :q, id: :q, value: params[:q], autofocus: true, class: 'form-control' %>
+              <div class="input-group-btn">
+                <button type="submit" class="btn btn-default">Search</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="list-group">
+        <% @results.each do |result| %>
+          <%= link_to movie_path(result['id']), class: 'list-group-item movie' do %>
+            <%= image_tag poster_url_for(result[:poster_path]), width: '92', height: '138' %>
+            <%= result['original_title'] %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
