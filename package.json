@@ -1,5 +1,5 @@
 {
-  "name": "trigger_database",
+  "name": "film_triggers",
   "private": true,
   "dependencies": {}
 }

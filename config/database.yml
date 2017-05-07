@@ -23,13 +23,13 @@ default: &default
 
 development:
   <<: *default
-  database: trigger_database_development
+  database: film_triggers_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: trigger_database
+  #username: film_triggers
 
   # The password associated with the postgres role (username).
   #password:
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: trigger_database_test
+  database: film_triggers_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: trigger_database_production
-  username: trigger_database
-  password: <%= ENV['TRIGGER_DATABASE_DATABASE_PASSWORD'] %>
+  database: film_triggers_production
+  username: film_triggers
+  password: <%= ENV['FILM_TRIGGERS_DATABASE_PASSWORD'] %>
