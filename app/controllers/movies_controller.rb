@@ -13,13 +13,13 @@ class MoviesController < ApplicationController
 
   def movie(id)
     Movie.new(
-      TheMovieDb.get("/movie/#{id}")
+      TheMovieDb.get_cached("/movie/#{id}")
     )
   end
 
   def search(query)
     if query.present?
-      response = TheMovieDb.get('/search/movie', query: { query: params[:q] })
+      response = TheMovieDb.get_cached('/search/movie', query: { query: params[:q] })
       response['results'].map do |result|
         Movie.new(result)
       end
@@ -29,14 +29,14 @@ class MoviesController < ApplicationController
   end
 
   def now_playing
-    response = TheMovieDb.get('/movie/now_playing')
+    response = TheMovieDb.get_cached('/movie/now_playing')
     response['results'].map do |result|
       Movie.new(result)
     end
   end
 
   def similar(id)
-    response = TheMovieDb.get("/movie/#{id}/similar")
+    response = TheMovieDb.get_cached("/movie/#{id}/similar")
     response['results'].map do |result|
       Movie.new(result)
     end
