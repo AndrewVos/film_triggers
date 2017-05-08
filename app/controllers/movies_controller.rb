@@ -1,6 +1,7 @@
 class MoviesController < ApplicationController
   def index
     @movies = search(params[:q])
+    @now_playing = now_playing
   end
 
   def show
@@ -34,6 +35,18 @@ class MoviesController < ApplicationController
       end
     else
       []
+    end
+  end
+
+  def now_playing
+    response = HTTParty.get(
+      'https://api.themoviedb.org/3/movie/now_playing',
+      query: {
+        api_key: ENV.fetch('THE_MOVIE_DB_API_KEY')
+      }
+    )
+    response['results'].map do |result|
+      Movie.new(result)
     end
   end
 end

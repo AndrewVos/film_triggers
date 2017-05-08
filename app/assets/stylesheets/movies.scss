@@ -1,0 +1,24 @@
+.search {
+  padding-bottom: $line-height-computed;
+}
+
+.now-playing {
+  .thumbnail {
+    text-align: center;
+  }
+
+  .caption {
+    h3 {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.movie {
+  .movie-image {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

@@ -1,12 +1,5 @@
 require 'application_system_test_case'
 
-VCR.configure do |config|
-  config.cassette_library_dir = "test/vcr_cassettes"
-  config.hook_into :webmock
-  config.ignore_localhost = true
-  config.filter_sensitive_data("<API_KEY>") { ENV.fetch('THE_MOVIE_DB_API_KEY') }
-end
-
 class ManageTriggersTest < ApplicationSystemTestCase
   include Warden::Test::Helpers
 

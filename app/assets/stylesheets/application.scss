@@ -1,12 +1,4 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "devise_bootstrap_views";
-
-.search {
-  padding-bottom: $line-height-computed;
-}
-
-.movie-image {
-  margin-left: auto;
-  margin-right: auto;
-}
+@import "movies";
