@@ -67,20 +67,22 @@
   </div>
 </div>
 
-<div class="row similar">
-  <div class="col-xs-12">
-    <h2>Related</h2>
-    <div class="row">
-      <% @similar.sample(4).each do |movie| %>
-        <div class="col-xs-12 col-sm-3">
-          <%= link_to movie_path(movie.id), class: 'thumbnail' do %>
-            <%= image_tag movie.large_poster_url, alt: movie.title %>
-            <div class="caption">
-              <h3><%= movie.title_with_year %></h3>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
+<% if @similar.any? %>
+  <div class="row similar">
+    <div class="col-xs-12">
+      <h2>Similar</h2>
+      <div class="row">
+        <% @similar.sample(4).each do |movie| %>
+          <div class="col-xs-12 col-sm-3">
+            <%= link_to movie_path(movie.id), class: 'thumbnail' do %>
+              <%= image_tag movie.large_poster_url, alt: movie.title %>
+              <div class="caption">
+                <h3><%= movie.title_with_year %></h3>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
