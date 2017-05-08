@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   def index
-    @results = results(params[:q])
+    @movies = search(params[:q])
   end
 
   def show
@@ -23,7 +23,7 @@ class MoviesController < ApplicationController
     ).parsed_response.with_indifferent_access
   end
 
-  def results(query)
+  def search(query)
     if query.present?
       response = HTTParty.get(
         'https://api.themoviedb.org/3/search/movie',
