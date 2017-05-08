@@ -13,24 +13,13 @@ class MoviesController < ApplicationController
 
   def movie(id)
     Movie.new(
-      HTTParty.get(
-        "https://api.themoviedb.org/3/movie/#{id}",
-        query: {
-          api_key: ENV.fetch('THE_MOVIE_DB_API_KEY')
-        }
-      ).parsed_response.with_indifferent_access
+      TheMovieDb.get("/movie/#{id}")
     )
   end
 
   def search(query)
     if query.present?
-      response = HTTParty.get(
-        'https://api.themoviedb.org/3/search/movie',
-        query: {
-          api_key: ENV.fetch('THE_MOVIE_DB_API_KEY'),
-          query: params[:q]
-        }
-      )
+      response = TheMovieDb.get('/search/movie', query: { query: params[:q] })
       response['results'].map do |result|
         Movie.new(result)
       end
@@ -40,24 +29,14 @@ class MoviesController < ApplicationController
   end
 
   def now_playing
-    response = HTTParty.get(
-      'https://api.themoviedb.org/3/movie/now_playing',
-      query: {
-        api_key: ENV.fetch('THE_MOVIE_DB_API_KEY')
-      }
-    )
+    response = TheMovieDb.get('/movie/now_playing')
     response['results'].map do |result|
       Movie.new(result)
     end
   end
 
   def similar(id)
-    response = HTTParty.get(
-      "https://api.themoviedb.org/3/movie/#{id}/similar",
-      query: {
-        api_key: ENV.fetch('THE_MOVIE_DB_API_KEY')
-      }
-    )
+    response = TheMovieDb.get("/movie/#{id}/similar")
     response['results'].map do |result|
       Movie.new(result)
     end
