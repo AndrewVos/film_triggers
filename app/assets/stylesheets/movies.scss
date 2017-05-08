@@ -2,6 +2,13 @@
   padding-bottom: $line-height-computed;
 }
 
+.search-results {
+  .movie {
+    .movie-title {
+      display: inline-block;
+    }
+  }
+}
 .now-playing {
   .thumbnail {
     text-align: center;

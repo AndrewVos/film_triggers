@@ -21,7 +21,9 @@
       <% @movies.each do |movie| %>
         <%= link_to movie_path(movie.id), class: 'list-group-item movie' do %>
           <%= image_tag movie.poster_url, alt: movie.title, width: '92', height: '138' %>
-          <%= movie.title_with_year %>
+          <h3 class="movie-title">
+            <%= movie.title_with_year %>
+          </h3>
         <% end %>
       <% end %>
     </div>
