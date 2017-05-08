@@ -7,8 +7,8 @@ class ManageTriggersTest < ApplicationSystemTestCase
     Warden.test_reset!
   end
 
-  test 'adding triggers to a movie' do
-    VCR.use_cassette 'search' do
+  test 'manage movie triggers' do
+    VCR.use_cassette 'manage_triggers' do
       login_as users(:one)
 
       Trigger.create!(user: users(:one), movie_id: 330459, label: 'contains bananas')

@@ -6,6 +6,7 @@ class MoviesController < ApplicationController
 
   def show
     @movie = movie(params[:id])
+    @similar = similar(params[:id])
   end
 
   private
@@ -41,6 +42,18 @@ class MoviesController < ApplicationController
   def now_playing
     response = HTTParty.get(
       'https://api.themoviedb.org/3/movie/now_playing',
+      query: {
+        api_key: ENV.fetch('THE_MOVIE_DB_API_KEY')
+      }
+    )
+    response['results'].map do |result|
+      Movie.new(result)
+    end
+  end
+
+  def similar(id)
+    response = HTTParty.get(
+      "https://api.themoviedb.org/3/movie/#{id}/similar",
       query: {
         api_key: ENV.fetch('THE_MOVIE_DB_API_KEY')
       }

@@ -1,15 +1,10 @@
 require 'application_system_test_case'
 
 class SearchTest < ApplicationSystemTestCase
-  include Warden::Test::Helpers
-
-  def setup
-    Warden.test_reset!
-  end
-
   test 'searching for movies' do
     VCR.use_cassette 'search' do
       visit root_path
+
       fill_in 'Search', with: 'rogue one'
       click_button 'Search'
 
