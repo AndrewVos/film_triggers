@@ -31,6 +31,9 @@
             the community-curated film trigger list
           </p>
           <ul class="nav navbar-nav navbar-right">
+            <li>
+              <%= link_to 'Contact', 'https://twitter.com/AndrewVos' %>
+            </li>
             <% if signed_in? %>
               <%= active_link_to "Account", edit_user_registration_path, wrap_tag: :li %>
               <%= active_link_to "Sign Out", destroy_user_session_path, wrap_tag: :li, method: :delete %>
