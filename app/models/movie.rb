@@ -31,10 +31,18 @@ class Movie
   end
 
   def title_with_year
-    "#{title} (#{year})"
+    if year
+      "#{title} (#{year})"
+    else
+      title
+    end
   end
 
   def year
-    Date.parse(release_date).year
+    if release_date.present?
+      Date.parse(release_date).year
+    else
+      nil
+    end
   end
 end
