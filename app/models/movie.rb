@@ -29,4 +29,12 @@ class Movie
     return 'http://placehold.it/300x450' unless poster_path.present?
     "https://image.tmdb.org/t/p/w300#{poster_path}"
   end
+
+  def title_with_year
+    "#{title} (#{year})"
+  end
+
+  def year
+    Date.parse(release_date).year
+  end
 end
