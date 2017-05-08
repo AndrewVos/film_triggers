@@ -16,10 +16,10 @@
 
 <% if params[:q].present? %>
   <div class="list-group">
-    <% @movies.each do |result| %>
-      <%= link_to movie_path(result['id']), class: 'list-group-item movie' do %>
-        <%= image_tag poster_url_for(result[:poster_path]), width: '92', height: '138' %>
-        <%= result['original_title'] %>
+    <% @movies.each do |movie| %>
+      <%= link_to movie_path(movie.id), class: 'list-group-item movie' do %>
+        <%= image_tag movie.poster_url, width: '92', height: '138' %>
+        <%= movie.original_title %>
       <% end %>
     <% end %>
   </div>
