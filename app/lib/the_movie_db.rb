@@ -7,7 +7,8 @@ class TheMovieDb
   logger Rails.logger
 
   def self.get_cached(url, options={})
-    Rails.cache.fetch(url, expires_in: 12.hours) do
+    key = Digest::MD5.hexdigest("#{url}#{options.to_json}")
+    Rails.cache.fetch(key, expires_in: 12.hours) do
       get(url, options).parsed_response
     end
   end
